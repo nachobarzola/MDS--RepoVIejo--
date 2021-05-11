@@ -49,7 +49,7 @@ public class Alumno {
 	private Direccion direccion;
 
 	@ManyToOne
-	@JoinColumn(name="ID_ALUMNO")
+	@JoinColumn(name="id")
 	private Escuela escuela;
 	
 	
