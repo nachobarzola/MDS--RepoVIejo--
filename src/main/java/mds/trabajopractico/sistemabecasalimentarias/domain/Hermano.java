@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -21,13 +24,19 @@ public class Hermano {
 	private String escuela;
 	private Boolean convive;
 	
-	public Hermano(Integer id, Integer edad, String ocupacion, String escuela, Boolean convive) {
+	
+	@ManyToOne
+	@JoinColumn(name= "ID_GRUPOFAMILIAR")
+	private GrupoFamiliar grupoFamiliar;
+	
+	public Hermano(Integer id, Integer edad, String ocupacion, String escuela, Boolean convive,GrupoFamiliar grFamiliar) {
 		super();
 		this.id = id;
 		this.edad = edad;
 		this.ocupacion = ocupacion;
 		this.escuela = escuela;
 		this.convive = convive;
+		this.grupoFamiliar = grFamiliar;
 	}
 
 	public Hermano() {
@@ -72,6 +81,15 @@ public class Hermano {
 
 	public void setConvive(Boolean convive) {
 		this.convive = convive;
+	}
+
+	
+	public GrupoFamiliar getGrupoFamiliar() {
+		return grupoFamiliar;
+	}
+
+	public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
+		this.grupoFamiliar = grupoFamiliar;
 	}
 
 	@Override

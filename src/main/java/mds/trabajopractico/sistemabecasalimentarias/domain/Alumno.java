@@ -9,6 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -21,6 +25,7 @@ public class Alumno {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //valor autonumerico
 	@Column(name="ID_ALUMNO")
 	private Integer id;
+	
 	private String nombre;
 	private String apellido;
 	private String nacionalidad;
@@ -31,15 +36,27 @@ public class Alumno {
 	private Date fechaDeNacimiento;
 	private String grado;
 	private String turno;
+	
+	@OneToOne
+	@JoinColumn(name="ID_GRUPOFAMILIAR")
 	private GrupoFamiliar grupoFamiliar;
+	
+	@OneToMany(mappedBy = "alumnoSolicitante")
 	private List<Solicitud> solicitudes;
+	
+	@OneToOne
+	@JoinColumn(name="ID_DIRECCION")
 	private Direccion direccion;
+
+	@ManyToOne
+	@JoinColumn(name="ID_ALUMNO")
+	private Escuela escuela;
 	
 	
 	
 	public Alumno(Integer id, String nombre, String apellido, String nacionalidad, String dni, String email,
 			String telefono, String cuit, Date fechaDeNacimiento, String grado, String turno,
-			GrupoFamiliar grupoFamiliar, Direccion direccion) {
+			GrupoFamiliar grupoFamiliar, Direccion direccion, Escuela esc) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -55,6 +72,7 @@ public class Alumno {
 		this.grupoFamiliar = grupoFamiliar;
 		this.solicitudes = new ArrayList<>();
 		this.direccion = direccion;
+		this.escuela = esc;
 	}
 	public Alumno() {super();}
 	public Integer getId() {
@@ -140,6 +158,15 @@ public class Alumno {
 	}
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
+	}
+	
+	
+	
+	public Escuela getEscuela() {
+		return escuela;
+	}
+	public void setEscuela(Escuela escuela) {
+		this.escuela = escuela;
 	}
 	@Override
 	public String toString() {

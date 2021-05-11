@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -20,6 +22,8 @@ public class BecaAprobada {
 	private Integer id;
 	private Date fechaInicio;
 	private Date fechaFin;
+	
+	@OneToOne(mappedBy = "becaAprobada")
 	private Solicitud solicitud;
 	
 	public BecaAprobada(Integer id, Date fechaInicio, Date fechaFin, Solicitud solicitud) {

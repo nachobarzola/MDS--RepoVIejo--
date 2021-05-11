@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -19,8 +22,14 @@ public class GrupoFamiliar {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //valor autonumerico
 	@Column(name="ID_GRUPOFAMILIAR")
 	private Integer id;
+	
+	@OneToMany(mappedBy = "grupoFamiliar")
 	private List<Hermano> listaHermano;
+	
+	@OneToMany(mappedBy = "grupoFamiliar")
 	private List<ProgenitorTutor> listaProgenitorTutor;
+	
+	@OneToMany(mappedBy = "grupoFamiliar")
 	private List<EnfermedadCronica> listaEnfermedadCronica;
 	
 	

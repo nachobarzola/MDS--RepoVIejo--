@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -24,9 +27,14 @@ public class ProgenitorTutor {
 	private String lugarDeTrabajo;
 	private Boolean convive;
 	
+
+	@ManyToOne
+	@JoinColumn(name= "ID_GRUPOFAMILIAR")
+	private GrupoFamiliar grupoFamiliar;
+	
 	
 	public ProgenitorTutor(String nombre, String apellido, Double ingresoNeto, Integer edad, String ocupacion,
-			String lugarDeTrabajo, Boolean convive) {
+			String lugarDeTrabajo, Boolean convive,GrupoFamiliar grFamiliar) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -35,6 +43,7 @@ public class ProgenitorTutor {
 		this.ocupacion = ocupacion;
 		this.lugarDeTrabajo = lugarDeTrabajo;
 		this.convive = convive;
+		this.grupoFamiliar = grFamiliar;
 	}
 
 
@@ -110,6 +119,17 @@ public class ProgenitorTutor {
 
 	public void setConvive(Boolean convive) {
 		this.convive = convive;
+	}
+
+	
+
+	public GrupoFamiliar getGrupoFamiliar() {
+		return grupoFamiliar;
+	}
+
+
+	public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
+		this.grupoFamiliar = grupoFamiliar;
 	}
 
 

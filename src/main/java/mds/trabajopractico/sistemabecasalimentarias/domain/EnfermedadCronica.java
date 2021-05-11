@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -20,11 +23,17 @@ public class EnfermedadCronica {
 	private Double gastoMensual;
 	
 	
-	public EnfermedadCronica(Integer id, String diagnostico, Double gastoMensual) {
+	@ManyToOne
+	@JoinColumn(name= "ID_GRUPOFAMILIAR")
+	private GrupoFamiliar grupoFamiliar;
+	
+	
+	public EnfermedadCronica(Integer id, String diagnostico, Double gastoMensual, GrupoFamiliar grFamilar) {
 		super();
 		this.id = id;
 		this.diagnostico = diagnostico;
 		this.gastoMensual = gastoMensual;
+		this.grupoFamiliar = grFamilar;
 	}
 
 
@@ -60,6 +69,16 @@ public class EnfermedadCronica {
 
 	public void setGastoMensual(Double gastoMensual) {
 		this.gastoMensual = gastoMensual;
+	}
+
+
+	public GrupoFamiliar getGrupoFamiliar() {
+		return grupoFamiliar;
+	}
+
+
+	public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
+		this.grupoFamiliar = grupoFamiliar;
 	}
 
 
