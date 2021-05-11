@@ -1,6 +1,21 @@
 package mds.trabajopractico.sistemabecasalimentarias.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(uniqueConstraints = 
+{@UniqueConstraint(columnNames={"ID_PROGENITOR"})})
 public class ProgenitorTutor {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //valor autonumerico
+	@Column(name="ID_PROGENITOR")
+	private Integer id;
 	private String nombre;
 	private String apellido;
 	private Double ingresoNeto;

@@ -1,6 +1,20 @@
 package mds.trabajopractico.sistemabecasalimentarias.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(uniqueConstraints = 
+{@UniqueConstraint(columnNames={"ID_ENFERMEDAD_CRONICA"})})
 public class EnfermedadCronica {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //valor autonumerico
+	@Column(name="ID_ENFERMEDAD_CRONICA")
 	private Integer id;
 	private String diagnostico;
 	private Double gastoMensual;

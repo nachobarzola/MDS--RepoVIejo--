@@ -3,7 +3,21 @@ package mds.trabajopractico.sistemabecasalimentarias.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(uniqueConstraints = 
+{@UniqueConstraint(columnNames={"ID_GRUPOFAMILIAR"})})
 public class GrupoFamiliar {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //valor autonumerico
+	@Column(name="ID_GRUPOFAMILIAR")
 	private Integer id;
 	private List<Hermano> listaHermano;
 	private List<ProgenitorTutor> listaProgenitorTutor;

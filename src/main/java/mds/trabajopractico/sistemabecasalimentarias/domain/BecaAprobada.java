@@ -2,7 +2,21 @@ package mds.trabajopractico.sistemabecasalimentarias.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(uniqueConstraints = 
+{@UniqueConstraint(columnNames={"ID_BECAAPROBADA"})})
 public class BecaAprobada {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //valor autonumerico
+	@Column(name="ID_BECAAPROBADA")
 	private Integer id;
 	private Date fechaInicio;
 	private Date fechaFin;

@@ -4,13 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mds.trabajopractico.sistemabecasalimentarias.domain.Alumno;
 import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.AlumnoService;
+import mds.trabajopractico.sistemabecasalimentarias.services.repositorios.AlumnoRepository;
 
 @Service
 public class AlumnoServiceImp implements AlumnoService{
+	
+	@Autowired
+	private AlumnoRepository alumnoRepo;
+	
 	private List<Alumno> listaAlumno = new ArrayList<>();
 
 	@Override
