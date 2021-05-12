@@ -1,7 +1,6 @@
 package mds.trabajopractico.sistemabecasalimentarias.services;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +16,9 @@ public class AlumnoServiceImp implements AlumnoService{
 	@Autowired
 	private AlumnoRepository alumnoRepo;
 	
-	private List<Alumno> listaAlumno = new ArrayList<>();
-
 	@Override
 	public Optional<Alumno> guardarAlumno(Alumno alumno) {
-		listaAlumno.add(alumno);
+		alumnoRepo.save(alumno);
 		return Optional.of(alumno);
 	}
 
@@ -39,8 +36,8 @@ public class AlumnoServiceImp implements AlumnoService{
 
 	@Override
 	public Optional<Alumno> getAlumno(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return alumnoRepo.findById(id);
+		
 	}
 
 }
