@@ -34,8 +34,6 @@ public class Solicitud {
 	@JoinColumn(name="ID_ALUMNO")
 	private Alumno alumnoSolicitante;
 	
-	@ManyToOne
-	@JoinColumn(name="ID_CLASIFICACION")
 	private ClasificacionSolicitud clasificacionSolicitud;
 	
 	

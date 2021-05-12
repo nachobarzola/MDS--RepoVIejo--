@@ -35,7 +35,7 @@ public class Alumno {
 	private String cuit;
 	private Date fechaDeNacimiento;
 	private String grado;
-	private String turno;
+	private Turno turno;
 	
 	@OneToOne
 	@JoinColumn(name="ID_GRUPOFAMILIAR")
@@ -55,7 +55,7 @@ public class Alumno {
 	
 	
 	public Alumno(Integer id, String nombre, String apellido, String nacionalidad, String dni, String email,
-			String telefono, String cuit, Date fechaDeNacimiento, String grado, String turno,
+			String telefono, String cuit, Date fechaDeNacimiento, String grado, Turno turno,
 			GrupoFamiliar grupoFamiliar, Direccion direccion, Escuela esc) {
 		super();
 		this.id = id;
@@ -135,10 +135,10 @@ public class Alumno {
 	public void setGrado(String grado) {
 		this.grado = grado;
 	}
-	public String getTurno() {
+	public Turno getTurno() {
 		return turno;
 	}
-	public void setTurno(String turno) {
+	public void setTurno(Turno turno) {
 		this.turno = turno;
 	}
 	public GrupoFamiliar getGrupoFamiliar() {
