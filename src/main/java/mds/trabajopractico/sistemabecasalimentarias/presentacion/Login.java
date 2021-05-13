@@ -9,6 +9,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,6 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import mds.trabajopractico.sistemabecasalimentarias.domain.Escuela;
-import mds.trabajopractico.sistemabecasalimentarias.services.EscuelaServiceImp;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.EscuelaRepository;
 import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.EscuelaService;
 import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.presentacion.LoginService;
  
