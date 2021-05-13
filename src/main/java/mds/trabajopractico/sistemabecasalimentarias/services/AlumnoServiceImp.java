@@ -46,8 +46,8 @@ public class AlumnoServiceImp implements AlumnoService{
 	
 	@Override
 	public Optional<Alumno> guardarAlumno(Alumno alumno) {
-		alumnoRepo.save(alumno);
-		return Optional.of(alumno);
+		Alumno alumnoRetur = alumnoRepo.save(alumno);
+		return Optional.of(alumnoRetur);
 	}
 
 	@Override
