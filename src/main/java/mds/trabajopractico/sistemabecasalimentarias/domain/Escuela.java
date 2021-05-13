@@ -22,15 +22,17 @@ public class Escuela {
 	private Integer id;
 	private String codigoUnicoEstablecimiento;
 	private String clave;
+	private String nombre;
 	
 	@OneToMany(mappedBy = "escuela")
 	private List<Alumno> listaAlumnos;
 	
 	
-	public Escuela(String codigoUnicoEstablecimiento, String clave) {
+	public Escuela(String codigoUnicoEstablecimiento, String clave, String name) {
 		super();
 		this.codigoUnicoEstablecimiento = codigoUnicoEstablecimiento;
 		this.clave = clave;
+		this.nombre = name;
 
 		this.listaAlumnos = new ArrayList<>();
 	}
@@ -68,6 +70,15 @@ public class Escuela {
 	public void addAlumno(Alumno alumno) {
 		this.listaAlumnos.add(alumno);
 	}
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	@Override
 	public String toString() {
 		return "Escuela [id=" + id + ", codigoUnicoEstablecimiento=" + codigoUnicoEstablecimiento + ", clave=" + clave

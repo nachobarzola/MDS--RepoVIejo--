@@ -83,7 +83,7 @@ class AlumnoServiceImpTest {
 
 		Optional<Alumno> optAlumno = alumnoService.guardarAlumno(alumno1);
 		// Creo escuela
-		Escuela escuela = new Escuela("JFHSKVMSE", "siempreViva");
+		Escuela escuela = new Escuela("JFHSKVMSE", "siempreViva","hola");
 		escuelaService.guardarEscuela(escuela);
 
 		Optional<Alumno> optAlumnoActualizado = alumnoService.agregarEscuelaAlumno(escuela, optAlumno.get().getId());

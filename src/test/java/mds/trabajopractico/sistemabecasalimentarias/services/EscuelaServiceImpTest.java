@@ -24,7 +24,7 @@ class EscuelaServiceImpTest {
 	@Test
 	void guardar_escuela() {
 		//guardo la escuela
-		Escuela escuela = new Escuela("Cod2","Clav2");
+		Escuela escuela = new Escuela("Cod2","Clav2","Nomb2");
 		Optional<Escuela> optEsc = escuelaService.guardarEscuela(escuela);
 		assertTrue(optEsc.isPresent());
 		//Recupero la escuela
