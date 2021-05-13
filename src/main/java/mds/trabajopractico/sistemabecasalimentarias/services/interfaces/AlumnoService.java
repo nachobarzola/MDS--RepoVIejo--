@@ -25,5 +25,9 @@ public interface AlumnoService {
 	
 	public Optional<Alumno> agregarGrupoFamiliarAAlumno(GrupoFamiliar grupFamiliar, Integer idAlumno);
 	
+	public Double getIngresoFamiliarTotal(Alumno alumno);
 	
+	public Double getGastoEnfermedadCronica(Alumno alumno);
+	
+	public Integer getCantidadHermanos(Alumno alumno);
 }
