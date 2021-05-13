@@ -130,4 +130,39 @@ public class AlumnoServiceImp implements AlumnoService{
 		return Optional.empty();
 	}
 
+	@Override
+	public Double getIngresoFamiliarTotal(Alumno alumno) {
+		Double sumaTotal = 0.0;
+		GrupoFamiliar grupoFamiliar = alumno.getGrupoFamiliar();
+		if(grupoFamiliar == null) {
+			return null; //Error debe tener grupo familiar
+		}
+		for(ProgenitorTutor unProgenitorTutor: grupoFamiliar.getListaProgenitorTutor()) {
+			sumaTotal += unProgenitorTutor.getIngresoNeto();
+		}
+
+		return sumaTotal;
+	}
+
+	@Override
+	public Double getGastoEnfermedadCronica(Alumno alumno) {
+		Double sumaGastoEnfermedadCronica = 0.0;
+		GrupoFamiliar grupoFamiliar = alumno.getGrupoFamiliar();
+		if(grupoFamiliar == null) {
+			return null; //Error debe tener grupo familiar
+		}
+		for(EnfermedadCronica unaEnfermedad: grupoFamiliar.getListaEnfermedadCronica()) {
+			sumaGastoEnfermedadCronica += unaEnfermedad.getGastoMensual(); 
+		}
+		return sumaGastoEnfermedadCronica;
+	}
+
+	@Override
+	public Integer getCantidadHermanos(Alumno alumno) {
+		if(alumno.getGrupoFamiliar() == null) {
+			return null; //Error debe tener grupo familiar
+		}
+		return alumno.getGrupoFamiliar().getListaHermano().size();
+	}
+
 }

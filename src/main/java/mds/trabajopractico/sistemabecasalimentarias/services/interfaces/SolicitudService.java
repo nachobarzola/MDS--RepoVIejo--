@@ -10,4 +10,7 @@ public interface SolicitudService {
 	Optional<Solicitud> guardarSolicitud(Solicitud solicitud);
 	
 	Optional<Solicitud> agregarBecaAprobada(Solicitud solicitud, BecaAprobada becaAprobada);
+	
+	ClasificacionSolicitud clasificarSolicitud(Solicitud solicitud);
+	
 }
