@@ -8,7 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -20,9 +22,10 @@ import javax.swing.JButton;
 import mds.trabajopractico.sistemabecasalimentarias.services.EscuelaServiceImp;
 import mds.trabajopractico.sistemabecasalimentarias.services.dao.EscuelaRepository;
 import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.EscuelaService;
+import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.LoginService;
 
 
-@Controller
+@Component
 public class Login extends JFrame {
 
 	private JPanel contentPane;
@@ -98,6 +101,6 @@ public class Login extends JFrame {
 		}  
 		});  
 		
-		
+		this.setVisible(true);
 	}
 }

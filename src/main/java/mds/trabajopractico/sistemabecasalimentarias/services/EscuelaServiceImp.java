@@ -24,6 +24,7 @@ public class EscuelaServiceImp implements EscuelaService {
 
 	@Override
 	public Optional<Escuela> loginEscuela(String codidoUnicoEstablecimiento, String clave) {
+		System.out.println("ENTRO COMO LOCO");
 		Escuela escuela = repoEscuela.findByCodigoUnicoEstablecimiento(codidoUnicoEstablecimiento);
 		// Existe esa escuela
 		if (escuela != null) {
