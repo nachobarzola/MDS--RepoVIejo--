@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mds.trabajopractico.sistemabecasalimentarias.domain.Escuela;
+import mds.trabajopractico.sistemabecasalimentarias.services.dao.EscuelaRepository;
 import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.EscuelaService;
-import mds.trabajopractico.sistemabecasalimentarias.services.repositorios.EscuelaRepository;
 
 @Service
 public class EscuelaServiceImp implements EscuelaService {

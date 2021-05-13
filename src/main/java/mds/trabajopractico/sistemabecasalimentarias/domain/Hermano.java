@@ -29,9 +29,8 @@ public class Hermano {
 	@JoinColumn(name= "ID_GRUPOFAMILIAR")
 	private GrupoFamiliar grupoFamiliar;
 	
-	public Hermano(Integer id, Integer edad, String ocupacion, String escuela, Boolean convive,GrupoFamiliar grFamiliar) {
+	public Hermano(Integer edad, String ocupacion, String escuela, Boolean convive,GrupoFamiliar grFamiliar) {
 		super();
-		this.id = id;
 		this.edad = edad;
 		this.ocupacion = ocupacion;
 		this.escuela = escuela;

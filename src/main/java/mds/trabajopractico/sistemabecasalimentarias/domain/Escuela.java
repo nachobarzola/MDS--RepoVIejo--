@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -29,14 +27,16 @@ public class Escuela {
 	private List<Alumno> listaAlumnos;
 	
 	
-	public Escuela(String codigoUnicoEstablecimiento, String clave,Integer idEsc) {
+	public Escuela(String codigoUnicoEstablecimiento, String clave) {
 		super();
 		this.codigoUnicoEstablecimiento = codigoUnicoEstablecimiento;
 		this.clave = clave;
-		this.id=idEsc;
+
 		this.listaAlumnos = new ArrayList<>();
 	}
-	public Escuela() {}
+	public Escuela() {
+		this.listaAlumnos = new ArrayList<>();
+	}
 	
 	public String getCodigoUnicoEstablecimiento() {
 		return codigoUnicoEstablecimiento;
@@ -64,6 +64,9 @@ public class Escuela {
 	}
 	public void addAlumnos(List<Alumno> listaAlumnos) {
 		this.listaAlumnos.addAll(listaAlumnos);
+	}
+	public void addAlumno(Alumno alumno) {
+		this.listaAlumnos.add(alumno);
 	}
 	@Override
 	public String toString() {

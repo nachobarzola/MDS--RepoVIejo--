@@ -19,9 +19,8 @@ public class Direccion {
 	private String domicilio;
 	private String localidad;
 	private String codigoPostal;
-	public Direccion(Integer id, String domicilio, String localidad, String codigoPostal) {
+	public Direccion(String domicilio, String localidad, String codigoPostal) {
 		super();
-		this.id = id;
 		this.domicilio = domicilio;
 		this.localidad = localidad;
 		this.codigoPostal = codigoPostal;

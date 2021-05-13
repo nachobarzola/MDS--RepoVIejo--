@@ -1,7 +1,8 @@
 package mds.trabajopractico.sistemabecasalimentarias.domain;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -14,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 
@@ -33,7 +36,10 @@ public class Alumno {
 	private String email;
 	private String telefono;
 	private String cuit;
+	
+	@Temporal(TemporalType.DATE)
 	private Date fechaDeNacimiento;
+	
 	private String grado;
 	private Turno turno;
 	
@@ -49,16 +55,15 @@ public class Alumno {
 	private Direccion direccion;
 
 	@ManyToOne
-	@JoinColumn(name="id")
+	@JoinColumn(name="ID_ESCUELA")
 	private Escuela escuela;
 	
 	
 	
-	public Alumno(Integer id, String nombre, String apellido, String nacionalidad, String dni, String email,
+	public Alumno(String nombre, String apellido, String nacionalidad, String dni, String email,
 			String telefono, String cuit, Date fechaDeNacimiento, String grado, Turno turno,
 			GrupoFamiliar grupoFamiliar, Direccion direccion, Escuela esc) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.nacionalidad = nacionalidad;

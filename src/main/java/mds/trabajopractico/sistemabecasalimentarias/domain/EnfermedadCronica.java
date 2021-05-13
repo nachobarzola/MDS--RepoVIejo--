@@ -28,9 +28,8 @@ public class EnfermedadCronica {
 	private GrupoFamiliar grupoFamiliar;
 	
 	
-	public EnfermedadCronica(Integer id, String diagnostico, Double gastoMensual, GrupoFamiliar grFamilar) {
+	public EnfermedadCronica(String diagnostico, Double gastoMensual, GrupoFamiliar grFamilar) {
 		super();
-		this.id = id;
 		this.diagnostico = diagnostico;
 		this.gastoMensual = gastoMensual;
 		this.grupoFamiliar = grFamilar;

@@ -34,17 +34,13 @@ public class GrupoFamiliar {
 	
 	
 
-	public GrupoFamiliar(Integer id) {
+	public GrupoFamiliar() {
 		super();
-		this.id = id;
 		this.listaHermano = new ArrayList<>();
 		this.listaProgenitorTutor = new ArrayList<>();
 		this.listaEnfermedadCronica = new ArrayList<>();
 	}
 
-	public GrupoFamiliar() {
-		super();
-	}
 
 	public Integer getId() {
 		return id;
@@ -61,8 +57,8 @@ public class GrupoFamiliar {
 	public void setListaHermano(List<Hermano> listaHermano) {
 		this.listaHermano = listaHermano;
 	}
-	public void addHermano(List<Hermano> listaHermano) {
-		this.listaHermano.addAll(listaHermano);
+	public void addHermano(Hermano hermano) {
+		this.listaHermano.add(hermano);
 	}
 
 	public List<ProgenitorTutor> getListaProgenitorTutor() {
@@ -72,8 +68,8 @@ public class GrupoFamiliar {
 	public void setListaProgenitorTutor(List<ProgenitorTutor> listaProgenitorTutor) {
 		this.listaProgenitorTutor = listaProgenitorTutor;
 	}
-	public void addProgenitorTutor(List<ProgenitorTutor> listaProgenitorTutor) {
-		this.listaProgenitorTutor.addAll(listaProgenitorTutor);
+	public void addProgenitorTutor(ProgenitorTutor progenitorTutor) {
+		this.listaProgenitorTutor.add(progenitorTutor);
 	}
 	public List<EnfermedadCronica> getListaEnfermedadCronica() {
 		return listaEnfermedadCronica;
@@ -82,8 +78,8 @@ public class GrupoFamiliar {
 	public void setListaEnfermedadCronica(List<EnfermedadCronica> listaEnfermedadCronica) {
 		this.listaEnfermedadCronica = listaEnfermedadCronica;
 	}
-	public void addEnfermedadCronica(List<EnfermedadCronica> listaEnfermedadCronica) {
-		this.listaEnfermedadCronica.addAll(listaEnfermedadCronica);
+	public void addEnfermedadCronica(EnfermedadCronica enfermedadCronica) {
+		this.listaEnfermedadCronica.add(enfermedadCronica);
 	}
 
 	@Override
