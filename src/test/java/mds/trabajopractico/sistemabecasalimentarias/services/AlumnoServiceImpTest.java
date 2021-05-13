@@ -14,16 +14,10 @@ import mds.trabajopractico.sistemabecasalimentarias.domain.GrupoFamiliar;
 import mds.trabajopractico.sistemabecasalimentarias.domain.Hermano;
 import mds.trabajopractico.sistemabecasalimentarias.domain.ProgenitorTutor;
 import mds.trabajopractico.sistemabecasalimentarias.domain.Turno;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.AlumnoRepository;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.DireccionRepository;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.EnfermedadCronicarepository;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.GrupoFamiliarRepository;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.HermanoRepository;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.ProgenitorTutorRepository;
 import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.AlumnoService;
 import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.EscuelaService;
 
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

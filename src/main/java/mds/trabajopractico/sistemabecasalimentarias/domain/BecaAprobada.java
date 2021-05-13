@@ -26,9 +26,8 @@ public class BecaAprobada {
 	@OneToOne(mappedBy = "becaAprobada")
 	private Solicitud solicitud;
 	
-	public BecaAprobada(Integer id, Date fechaInicio, Date fechaFin, Solicitud solicitud) {
+	public BecaAprobada(Date fechaInicio, Date fechaFin, Solicitud solicitud) {
 		super();
-		this.id = id;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.solicitud = solicitud;

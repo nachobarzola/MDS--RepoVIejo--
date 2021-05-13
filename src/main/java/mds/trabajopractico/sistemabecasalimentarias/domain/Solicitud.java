@@ -37,10 +37,9 @@ public class Solicitud {
 	private ClasificacionSolicitud clasificacionSolicitud;
 	
 	
-	public Solicitud(Integer id, Date fecha, BecaAprobada becaAprobada, Alumno alumnoSolicitante,
+	public Solicitud(Date fecha, BecaAprobada becaAprobada, Alumno alumnoSolicitante,
 			ClasificacionSolicitud clasificacionSolicitud) {
 		super();
-		this.id = id;
 		this.fecha = fecha;
 		this.becaAprobada = becaAprobada;
 		this.alumnoSolicitante = alumnoSolicitante;
