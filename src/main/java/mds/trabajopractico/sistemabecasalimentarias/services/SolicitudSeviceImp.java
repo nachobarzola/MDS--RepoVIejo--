@@ -38,6 +38,9 @@ public class SolicitudSeviceImp implements SolicitudService{
 		return Optional.empty();
 	}
 
+	/*Metodo que se encarga de agregarle a una solicitud una becaAprobada,
+	 * luego persiste los datos.
+	 * */
 	@Override
 	public Optional<Solicitud> agregarBecaAprobada(Solicitud solicitud, BecaAprobada becaAprobada) {
 		if(becaAprobadaRepo.save(becaAprobada) != null) {
@@ -51,16 +54,20 @@ public class SolicitudSeviceImp implements SolicitudService{
 		}
 		return Optional.empty();
 	}
-
+	
+	/*Metodo que se encarga de clasificar una solicitud. 
+	 * La solicitud debe tener un grupo familiar asignado. */
 	@Override
 	public ClasificacionSolicitud clasificarSolicitud(Solicitud solicitud) {
 		Double sumaIngresoNetoFamiliar = alumnoService.getIngresoFamiliarTotal(solicitud.getAlumnoSolicitante());
 		if(sumaIngresoNetoFamiliar == null) {
+			System.out.println("[Debug-SolicitudServiceImp-clasificarSolicitud]: la suma del ingreso familiar es nula\n");
 			//TODO: deberia notificar a la interfaz
 			return null; //TODO: evitar return null
 		}
 		Double sumaGastoEnfermedad = alumnoService.getGastoEnfermedadCronica(solicitud.getAlumnoSolicitante());
 		if(sumaGastoEnfermedad == null) {
+			System.out.println("[Debug-SolicitudServiceImp-clasificarSolicitud]: la suma del gasto familiar es nula\n");
 			//TODO: deberia notificar a la interfaz
 			return null; //TODO: evitar return null
 		}
@@ -74,6 +81,8 @@ public class SolicitudSeviceImp implements SolicitudService{
 		return analizarSolicitud(diferenciaIngresoGasto, cantidadHermanos);
 	}
 	
+	/*
+	 * */
 	private ClasificacionSolicitud analizarSolicitud(Double diferenciaIngresoGasto, Integer cantidadHermanos) {
 		//------------SOLICITUD RECHAZADA
 		//Suma(ingresosFamiliar) - Suma(gastoMensualEnfermedad) >= $ 60.000
