@@ -19,13 +19,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import mds.trabajopractico.sistemabecasalimentarias.services.EscuelaServiceImp;
-import mds.trabajopractico.sistemabecasalimentarias.services.dao.EscuelaRepository;
-import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.EscuelaService;
-import mds.trabajopractico.sistemabecasalimentarias.services.interfaces.LoginService;
 
 
-@Component
+
 public class Login extends JFrame {
 
 	private JPanel contentPane;
@@ -33,8 +29,6 @@ public class Login extends JFrame {
 	private JTextField campoClave;
 	private JLabel ingresando;
 
-	@Autowired
-	private EscuelaService escuelaService;
 	
 	/**
 	 * Launch the application.
@@ -96,8 +90,7 @@ public class Login extends JFrame {
 		        //campoCodigo.getText();
 		        //campoClave.getText();
 		        	        
-		        escuelaService.loginEscuela(campoCodigo.getText(),campoClave.getText() );
-		        
+		       
 		}  
 		});  
 		
